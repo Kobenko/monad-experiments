@@ -1,0 +1,62 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5be8b7fa2ded8c2764103bcaaaebddc7b48ed1a45dd56c35e415dd9e2d862663
+
+name:           monad-experiments
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/monad-experiments#readme>
+homepage:       https://github.com/githubuser/monad-experiments#readme
+bug-reports:    https://github.com/githubuser/monad-experiments/issues
+author:         Kobenko Mikhail
+maintainer:     m-kobenko@mail.ru
+copyright:      2018 Kobenko
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/monad-experiments
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_monad_experiments
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable monad-experiments-exe
+  main-is: Main.hs
+  other-modules:
+      Kleisli
+      Paths_monad_experiments
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , monad-experiments
+  default-language: Haskell2010
+
+test-suite monad-experiments-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_monad_experiments
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , monad-experiments
+  default-language: Haskell2010
